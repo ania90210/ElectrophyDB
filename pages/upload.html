@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="UTF-8">
+      <title>Electrophysiology Database</title>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link type="text/css" rel="stylesheet" href="../css/style.css">
+    </head>
+  <body>
+    
+    <div class="wrapper ">
+      <div class="sidebar border-right" id="sidebar-wrapper">
+        <!-- Header-->
+        <div class="logo sidebar-heading">
+          <p class="simple-text">
+            Electrophysiology
+          </p>
+        </div>
+        <!-- Navigation buttons-->
+        <ul class="list-group list-group-flush">
+          <li class="nav-item">
+            <a href="./upload.html" class="list-group-item list-group-item-action active nav-link">Upload</a>
+          </li>
+          <li class="nav-item ">
+            <a href="#dropmenu1" data-toggle="collapse" class="list-group-item list-group-item-action nav-drop">Experimental Data 
+              <i class="fa fa-chevron-down chevron-down"></i> 
+            </a> 
+            <div id="dropmenu1" class="collapse dropmenu">
+              <a href="./files.html" class="list-group-item  list-group-item-action nav-link"> 
+                <i class="fa fa-chevron-right"></i> Data</a>
+              <a href="./graph.html" class=" list-group-item  list-group-item-action nav-link">
+                <i class="fa fa-chevron-right"></i> Graphs</a>
+            </div>
+          </li>
+          <li class="nav-item ">
+            <a href="#dropmenu2" data-toggle="collapse" class="list-group-item list-group-item-action nav-drop">Electrophysiological Models
+              <i class="fa fa-chevron-down chevron-down"></i> 
+            </a> 
+            <div id="dropmenu2" class="collapse dropmenu">
+              <a href="./Hodgkin-Huxley.html" class="list-group-item  list-group-item-action nav-link">
+                <i class="fa fa-chevron-right"></i> Hodgkin-Huxley Model</a>
+              <a href="./BeelerReuter.html" class=" list-group-item  list-group-item-action nav-link">
+                <i class="fa fa-chevron-right"></i> Beeler Reuter Model</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Page Content -->
+      <div class="main-panel" id="content">
+        <div class="container-fluid" data-spy="scroll">
+          <form action="/upload" method="POST" enctype="multipart/form-data">
+            <!-- Input data-->
+            <div class="card form-inline">
+              <div class="form-group row justify-content-md-center">
+                <div class="col-md-4 col-sm-4 col-12">
+                  <label for="cancertype">Type of cancer</label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-12">
+                  <input name="cancertype" class="form-control" id="cancertype">
+                </div>      
+              </div>
+
+              <div class="form-group row justify-content-md-center">
+                <div class="col-md-4 col-sm-4 col-12">
+                  <label for="cellline">Cell line</label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-12">
+                  <input name="cellline" class="form-control" id="cellline">
+                </div>
+              </div>
+
+              <div class="form-group row justify-content-md-center">
+                <div class="col-md-4 col-sm-4 col-12">
+                  <label for="ionchannel">Ion Channel</label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-12">
+                  <input name="ionchannel" class="form-control" id="ionchannel">
+                </div>
+              </div>
+            </div>
+            
+          <!-- CSV details-->
+            <div style="padding-left: 20px">
+              <p class="bold-text">Convert ABF to CSV file: 
+              <a href="../ABFconverter/loadVclampAbf.m" download class="description">Converter</a></p>
+              <p class="bold-text">Fill in case of converted ABF/ASC file in CSV format [ms, mV, nA]:</p>
+              <div class="detail-card">
+                <div class="row text-details">
+                  <div class="col-4 form-group">
+                    <div class="row" style="align-items: center">
+                      <label for="recording" style="padding-left: 15px;padding-right: 15px;">Recording</label>
+                      <select class="form-control" name = "recording" id="recording" style="width: 150px; height: 37px;">
+                        <option value="voltage">voltage-clamp</option>
+                        <option value="current">current-clamp</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-4 form-group">
+                    <label for="voltageStart" id="rec">Voltage levels from</label>
+                    <input name="voltageStart" id="voltageStart" style="width: 60px">
+                    <label for="voltageEnd">to</label>
+                    <input name="voltageEnd" id="voltageEnd" style="width: 60px;">
+                  </div>
+                  <div class="col-4 form-group">
+                    <label for="increment">Increment</label>
+                    <input name="increment" id="increment">
+                  </div>
+                </div>
+                <div class="row text-details">
+                  <div class="col-4 form-group">
+                    <label for="pulseNo">Number of pulses</label>
+                    <input name="pulseNo" id="pulseNo" style="width: 140px;">
+                  </div>
+                  <div class="col-4 form-group">
+                    <label for="length">Pulse Length</label>
+                    <input name="length" id="length">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Upload -->
+            <div class="row m-b-1">
+              <div class="col-sm-6 offset-sm-3">
+                <div id="drop-area">
+                    <div id="filedrag">
+                      <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">Upload file with data</legend>
+                        <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+                        <label for="fileselect">Files to upload:</label>
+                        <input type="file" id="fileselect" name="fileupload" multiple="multiple" />
+                        <p>or drop files here</p>
+                      </fieldset>
+                    </div>
+                  </div>             
+              </div>
+            </div>
+
+            <div class="card-button form-group">
+              <button type='submit' class="btn btn-outline-primary" onclick="validation()">Upload</button>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../upload.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="UTF-8">
+      <title>Electrophysiology Database</title>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <div class="wrapper ">
+      <div class="sidebar border-right" id="sidebar-wrapper">
+        <!-- Header-->
+        <div class="logo sidebar-heading">
+          <p class="simple-text">
+            Electrophysiology
+          </p>
+        </div>
+        <!-- Navigation buttons-->
+        <ul class="list-group list-group-flush">
+          <li class="nav-item nav-border">
+            <a href="./upload.html" class="list-group-item list-group-item-action nav-link nav-drop">Upload</a>
+          </li>
+          <li class="nav-item nav-border">
+            <a href="#dropmenu1" data-toggle="collapse" class="list-group-item list-group-item-action nav-drop">Experimental Data 
+                <i class="fa fa-chevron-down chevron-down"></i> 
+              </a> 
+              <div id="dropmenu1" class="collapse dropmenu">
+                <a href="./files.html" class="list-group-item  list-group-item-action nav-link">
+                  <i class="fa fa-chevron-right"></i> Data</a>
+                <a href="./graph.html" class=" list-group-item  list-group-item-action nav-link">
+                  <i class="fa fa-chevron-right"></i> Graphs</a>
+              </div>
+          </li>
+          <li class="nav-item ">
+            <a href="#dropmenu2" data-toggle="collapse" class="list-group-item list-group-item-action nav-drop">Electrophysiological Models
+              <i class="fa fa-chevron-down chevron-down"></i> 
+            </a> 
+            <div id="dropmenu2" class="collapse show dropmenu">
+              <a href="./Hodgkin-Huxley.html" class="list-group-item  list-group-item-action nav-link">
+                <i class="fa fa-chevron-right"></i> Hodgkin-Huxley Model</a>
+              <a href="./BeelerReuter.html" class=" list-group-item  list-group-item-action nav-link active">
+                <i class="fa fa-chevron-right"></i> Beeler Reuter Model</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Page Content -->
+      <div class="main-panel" id="content">
+        <div class="container-fluid" data-spy="scroll">
+            <h4 class="model-heading">Beeler Reuter Model</h4>
+            <p class="description"> This model (1977) was developed to describe the membrane action potentials of mammalian ventricular myocardial fibres. In this model the total ionic flux is divided into four individual ionic currents formulated mathematically in terms of Hodgkin—Huxley type equations. </p>
+            <img src="../img/BeelerReuter.PNG" alt="Beeler Reuter model" class="img">
+            <p class="description"> Model includes the excitatory inward sodium current I<sub>Na</sub>, time-independent outward potassium current I<sub>K1</sub>, time-dependent outward current I<sub>x1</sub> and slow inward current I<sub>s</sub> primarily carried by calcium ions.
+            The total ionic current uses eight variables: membrane potential V<sub>m</sub>, intracellular calcium concentration [Ca] and six gating variables ( m, h, j, x1, f and j ).
+            Model equations with 4 ionic membrane currents and a stimulus current I<sub>stim</sub> are expressed as:</p>
+            <img src="../img/BRequation1.PNG" alt="Beeler Reuter equations" class="img">
+            <p class="description">Where membrane capacitance C<sub>m</sub> = 1 μ F/cm<sup>2</sup>.</p>
+            <img src="../img/BRequation2.PNG" alt="Beeler Reuter equations" class="img">
+            <div style="width: max-content;">
+                <a href="../download/2017_Bookmatter_ModellingOrgansTissuesCellsAnd.pdf" download >
+                    <p class="description">Download Matlab script: pages 410-420 </p>
+                </a>
+            </div>
+            <h5 class="model-heading">References:</h5>
+            <p class="description" style="padding-top: 0px;">G. W. Beeler, H. Reuter "Reconstruction of the action potential of ventricular myocardial fibres", J Physiol. 1977 Jun; 268(1): 177–210.</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../script.js"></script>
+
+  </body>
+</html>

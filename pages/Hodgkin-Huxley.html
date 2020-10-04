@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="UTF-8">
+      <title>Electrophysiology Database</title>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <div class="wrapper ">
+      <div class="sidebar border-right" id="sidebar-wrapper">
+        <!-- Header-->
+        <div class="logo sidebar-heading">
+          <p class="simple-text">
+            Electrophysiology
+          </p>
+        </div>
+        <!-- Navigation buttons-->
+        <ul class="list-group list-group-flush">
+          <li class="nav-item nav-border">
+            <a href="./upload.html" class="list-group-item list-group-item-action nav-link nav-drop">Upload</a>
+          </li>
+          <li class="nav-item nav-border">
+            <a href="#dropmenu1" data-toggle="collapse" class="list-group-item list-group-item-action nav-drop">Experimental Data 
+              <i class="fa fa-chevron-down chevron-down"></i> 
+            </a> 
+            <div id="dropmenu1" class="collapse dropmenu">
+              <a href="./files.html" class="list-group-item  list-group-item-action nav-link"> 
+                <i class="fa fa-chevron-right"></i> Data</a>
+              <a href="./graph.html" class=" list-group-item  list-group-item-action nav-link">
+                <i class="fa fa-chevron-right"></i> Graphs</a>
+            </div>
+          </li>
+          <li class="nav-item ">
+            <a href="#dropmenu2" data-toggle="collapse" class="list-group-item list-group-item-action nav-drop">Electrophysiological Models
+              <i class="fa fa-chevron-down chevron-down"></i> 
+            </a> 
+            <div id="dropmenu2" class="collapse show dropmenu">
+              <a href="./Hodgkin-Huxley.html" class="list-group-item  list-group-item-action nav-link active">
+                <i class="fa fa-chevron-right"></i> Hodgkin-Huxley Model</a>
+              <a href="./BeelerReuter.html" class=" list-group-item  list-group-item-action nav-link">
+                <i class="fa fa-chevron-right"></i> Beeler Reuter Model</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Page Content -->
+      <div class="main-panel" id="content">
+        <div class="container-fluid" data-spy="scroll">
+          <h4 class="model-heading">The Hodgkin-Huxley Model</h4>
+          <p class="description">First mathematical model describing the behavior of membrane in excitable cells was presented by Alan Hodgkin and Andrew Huxley in 1952. They developed the electronic circuit to model the propagation of action potential in the squid giant axon. This model treats every component of excitable cell as an electrical unit.</p>
+          <img src="../img/HHmodel.PNG" alt="Hodgkin−Huxley model" class="img">
+          <p class="description">The lipid bilayer has a capacitance C<sub>m</sub>, voltage-gated ion channels are represented by conductance g<sub>x</sub>, where x is a specific ion and g<sub>L</sub> describes linear conductance of leak ion channels. E<sub>x</sub> represents the electrochemical gradient that drives the flow of ion x and I<sub>app</sub> is the applied stimulus current.</p>
+          <p class="description">Properties of an excitable cell are described by a set of four ordinary differential equations:</p>
+          <img src="../img/HHequations.PNG" alt="Hodgkin−Huxley equations" class="img-eq">
+          <p class="description">Where v is the membrane potential,  h, m, and n are the gate variables, α is the opening rate constant and β is the closing rate constant.</p>
+          <div style="width: max-content;">
+            <a href="https://www.mathworks.com/matlabcentral/fileexchange/46740-hhrun-hodgkin-huxley-model-simulation-for-user-defined-input-current" download>
+              <p class="description">Download the model from MathWorks </p>
+            </a>
+          </div>
+          <h5 class="model-heading">References:</h5>
+          <p class="description" style="padding-top: 0px;">Kuijpers, Nico. “Chapter 2 Cellular electrophysiology: modeling and simulation.” (2011).</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../script.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="UTF-8">
+      <title>Electrophysiology Database</title>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <div class="wrapper ">
+      <div class="sidebar border-right" id="sidebar-wrapper">
+        <!-- Header-->
+        <div class="logo sidebar-heading">
+          <p class="simple-text">
+            Electrophysiology
+          </p>
+        </div>
+        <!-- Navigation buttons-->
+        <ul class="list-group list-group-flush">
+          <li class="nav-item nav-border">
+            <a href="./upload.html" class="list-group-item list-group-item-action nav-link">Upload</a>
+          </li>
+          <li class="nav-item nav-border">
+            <a href="#dropmenu1" data-toggle="collapse" class="list-group-item list-group-item-action nav-drop">Experimental Data 
+              <i class="fa fa-chevron-down chevron-down"></i> 
+            </a> 
+            <div id="dropmenu1" class="collapse show dropmenu">
+              <a href="./files.html" class="list-group-item  list-group-item-action nav-link active"> 
+                <i class="fa fa-chevron-right"></i> Data</a>
+              <a href="./graph.html" class=" list-group-item  list-group-item-action nav-link">
+                <i class="fa fa-chevron-right"></i> Graphs</a>
+            </div>
+          </li>
+          <li class="nav-item ">
+            <a href="#dropmenu2" data-toggle="collapse" class="list-group-item list-group-item-action nav-drop">Electrophysiological Models
+              <i class="fa fa-chevron-down chevron-down"></i> 
+            </a> 
+            <div id="dropmenu2" class="collapse dropmenu">
+              <a href="./Hodgkin-Huxley.html" class="list-group-item  list-group-item-action nav-link">
+                <i class="fa fa-chevron-right"></i> Hodgkin-Huxley Model</a>
+              <a href="./BeelerReuter.html" class=" list-group-item  list-group-item-action nav-link">
+                <i class="fa fa-chevron-right"></i> Beeler Reuter Model</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Page Content -->
+      <div class="main-panel" id="content">
+        <div class="container-fluid" data-spy="scroll">
+          <!-- Input data-->
+          <div class="card form-inline">
+            <div class="form-group row justify-content-md-center">
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="cancertype">Type of cancer</label>
+              </div>
+              <div class="col-md-4 col-sm-4 col-12">
+                <input name="cancertype" class="form-control" id="cancertype">
+              </div>      
+            </div>
+
+            <div class="form-group row justify-content-md-center">
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="cellline">Cell line</label>
+              </div>
+              <div class="col-md-4 col-sm-4 col-12">
+                <input name="cellline" class="form-control" id="cellline">
+              </div>
+            </div>
+
+            <div class="form-group row justify-content-md-center">
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="ionchannel">Ion Channel</label>
+              </div>
+              <div class="col-md-4 col-sm-4 col-12">
+                <input name="ionchannel" class="form-control" id="ionchannel">
+              </div>
+            </div>
+          </div>          
+
+          <!-- History -->
+          <div class="card">
+
+            <div class="form-group row">
+              <div class="col-md-4 col-sm-4 col-12">
+                <h4 class="">History of uploaded files</h4>
+              </div>
+              <button class="btn btn-outline-primary" onclick="showHistory()">Show</button>
+            </div>
+
+            <div class="table">
+              <div class="row heading bg-primary">
+                  <div class="col-1">No</div>
+                  <div class="col-5">File</div>
+                  <div class="col-4">Date</div>
+                  <div class="col-2">Action</div>
+              </div>
+            </div>
+            <div class="ex3">
+              <div class="table " id="history-section"></div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../fileSearch.js"></script>
+
+  </body>
+</html>
